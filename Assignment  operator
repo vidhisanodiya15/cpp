@@ -1,0 +1,14 @@
+// C++ program to illustrate the use of assignment operator
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    // Declare an integer variable
+    int x;
+    // Assign the value 20 to variable x using assignment
+    // operator
+    x = 20;
+    cout << "The value of x is: " << x << endl;
+    return 0;
+}
