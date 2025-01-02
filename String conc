@@ -1,0 +1,13 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    char s1[] = "Hello";
+    char s2[] = " World";
+
+    // Concatenating s1 and s2
+    strcat(s1, s2);
+
+    cout << s1;
+    return 0;
+}
