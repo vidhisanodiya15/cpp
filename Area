@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+class area{
+	public :
+	void Area(){
+		int a,b,c,d,e;
+		cin>>a>>b>>c>>d>>e;
+		switch(a){
+			case 1: {
+				cout<<"area of square :"<<b*b<<endl;
+				break;
+			}
+			case 2: {
+				cout<<"are aof traingle : "<<0.5*c*d<<endl;
+				break;
+			}
+			case 3:{
+				cout<<"area of recatngle"<<d*e<<endl;
+				break;
+			}
+		}
+	}
+};
+int main(){
+	area s1;
+	s1.Area();
+}
