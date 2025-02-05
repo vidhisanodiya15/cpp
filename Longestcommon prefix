@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+#include<string.h>
+using namespace std;
+
+int commonPrefixLen(string& s1, string& s2) {
+    int idx = 0;
+    int len = min(s1.length(), s2.length());
+    while (idx < len && s1[idx] == s2[idx]) {
+          idx++;
+    }
+    return idx;
+}
+string longestCommonPrefix(vector<string>& arr) {
+    string res = arr[0];
+    for (int i = 1; i < arr.size(); i++) {
+          int len = commonPrefixLen(res, arr[i]);
+        res = res.substr(0, len);
+    }
+    return res;
+}
+
+int main() {
+    vector<string> arr = {"flower","flow","flight"};
+    cout << longestCommonPrefix(arr) << endl;
+    return 0;
+}
