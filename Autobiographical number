@@ -1,0 +1,45 @@
+#include<iostream>
+using namespace std;
+
+bool isAutobiographical(int n) {
+    int digits[10] = {0}; 
+    int count[10] = {0};  
+    int length = 0;
+
+    int temp = n;
+    while (temp > 0) {
+        digits[length] = temp % 10;
+        temp /= 10;
+        length++;
+    }
+    for (int i = 0; i < length / 2; i++) {
+        swap(digits[i], digits[length - i - 1]);
+    }`
+
+    for (int i = 0; i < length; i++) {
+        for (int j = 0; j < length; j++) {
+            if (digits[j] == i) {
+                count[i]++;
+            }
+        }
+    }
+    for (int i = 0; i < length; i++) {
+        if (digits[i] != count[i]) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+int main() {
+    int n = 6210001000;
+    
+    if (isAutobiographical(n)) {
+        cout << n << " is an autobiographical number." << endl;
+    } else {
+        cout << n << " is not an autobiographical number." << endl;
+    }
+
+    return 0;
+}
