@@ -1,0 +1,61 @@
+
+
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+char calculateGrade(int marks)
+{
+    if (marks >= 90)
+    {
+        return 'A';
+    }
+    else if (marks >= 80)
+    {
+        return 'B';
+    }
+    else if (marks >= 70)
+    {
+        return 'C';
+    }
+    else if (marks >= 60)
+    {
+        return 'D';
+    }
+    else if (marks >= 50)
+    {
+        return 'E';
+    }
+    else
+    {
+        return 'F';
+    }
+}
+
+int main()
+{
+    string studentName;
+    int rollNumber, marks;
+
+    cout << "Enter student name: ";
+    getline(cin, studentName);
+    cout << "Enter roll number: ";
+    cin >> rollNumber;
+    cout << "Enter marks: ";
+    cin >> marks;
+
+    char grade = calculateGrade(marks);
+
+    cout << "\n==============================\n";
+    cout << "          GRADING CARD        \n";
+    cout << "==============================\n";
+    cout << "Student Name:    " << studentName << endl;
+    cout << "Roll Number:     " << rollNumber << endl;
+    cout << "Marks Obtained:  " << marks << endl;
+    cout << "Grade:           " << grade << endl;
+    cout << "==============================\n";
+
+    return 0;
+}
