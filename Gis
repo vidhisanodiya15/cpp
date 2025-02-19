@@ -1,0 +1,106 @@
+//in a list of numbers seprated by commas, add all numbers that don't lie bw 5 & 8 and the concatinate that bw 5 to 8 
+/*
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+    
+    int num1 = 0;
+    bool found5 = false;
+    
+    for(int i=0;i<n;i++)
+    {
+        if(arr[i] == 5)
+        {
+            found5 = true;
+            continue;
+        }
+        if(!found5)
+        {
+            num1 += arr[i];
+        }
+        else if(arr[i] == 8)
+        {
+            found5 = false;
+            continue;
+        }
+        else if(!found5)
+        {
+            num1 += arr[i];
+        }
+    }
+    cout<<num1<<endl;
+    
+    found5 = false;
+    for(int i=0;i<n;i++)
+    {
+        if(arr[i] == 5)
+        {
+            found5 = true;
+            cout<<arr[i];
+        }
+        else if(found5 && arr[i] != 8)
+        {
+            cout<<arr[i];
+        }
+        else if(found5 && arr[i] == 8)
+        {
+            cout<<arr[i];
+            found5 = false;
+        }
+    }
+    
+    return 0;
+}
+*/
+// from a mixed string of letters numbers special characters give output of greatest possible even number if even is not there then return -1
+#include<iostream>
+#include<string>
+#include<algorithm>
+using namespace std;
+int main() {
+    string s;
+    cin >> s;  
+    string nums = "";
+    for(char c : s) {
+        if(isdigit(c)) nums += c;
+    } 
+    if(nums.empty()) {
+        cout << -1;
+        return 0;
+    } 
+    sort(nums.begin(), nums.end());
+    reverse(nums.begin(), nums.end());
+    bool foundEven = false;
+    for(char c : nums) {
+        if(c % 2 == 0) {
+            foundEven = true;
+            break;
+        }
+    }
+    if(!foundEven) {
+        cout << -1;
+        return 0;
+    } 
+    int evenPos = -1;
+    for(int i = nums.length()-1; i >= 0; i--) {
+        if((nums[i] - '0') % 2 == 0) {
+            evenPos = i;
+            break;
+        }
+    }
+    if(evenPos == -1) {
+        cout << -1;
+        return 0;
+    }
+    swap(nums[evenPos], nums[nums.length()-1]);
+    cout << nums;
+    return 0;
+}
