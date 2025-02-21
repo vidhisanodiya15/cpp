@@ -1,0 +1,20 @@
+
+
+SortingEvenPlaces:
+
+#include <iostream>
+#include<algorithm>
+using namespace std;
+int main()
+{
+    int arr[]={11,5,7,8,3,1,9,2};
+    int n= sizeof(arr) / sizeof(arr[0]);
+    int even[] = {arr[0],arr[2],arr[4],arr[6]};
+    
+    sort(even, even+4);
+    cout<<"Sorted EvenPlaces of Array: "<<endl;
+    for(int i=0;i<4;i++){
+        cout<<even[i]<<" ";
+    }
+    return 0;
+ }
